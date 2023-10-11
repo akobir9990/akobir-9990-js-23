@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="adminHeader">
+        <div class="container">
+          <h1>
+            Product manager <br />
+            Admin
+          </h1>
+          <button id="backToHome">back to home</button>
+        </div>
+      </div>
+      <section class="prodForm">
+        <div class="container">
+          <div id="form">
+            <div class="">
+              <label for="prodName">prod Name</label>
+              <input type="text" name="prodName" id="prodName" />
+            </div>
+            <div class="">
+              <label for="prodInfo">prod Info</label>
+              <input type="text" name="prodInfo" id="prodInfo" />
+            </div>
+            <div class="">
+              <label for="prodPrice">prod Price</label>
+              <input type="text" name="prodPrice" id="prodPrice" />
+            </div>
+            <button id="addNewProd">add new prod</button>
+          </div>
+        </div>
+      </section>
+      <section class="prodList">
+        <div class="container">
+          <h1>All prod hand list</h1>
+          <div id="allList"></div>
+        </div>
+      </section>
+    </div>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

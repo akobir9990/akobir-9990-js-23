@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#prod {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 1px solid red;
+  width: 200px;
+  height: 250px;
+}

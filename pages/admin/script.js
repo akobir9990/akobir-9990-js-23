@@ -4,12 +4,13 @@ const prodName = document.getElementById("prodName");
 const prodInfo = document.getElementById("prodInfo");
 const prodPrice = document.getElementById("prodPrice");
 const backToHome = document.getElementById("backToHome");
+const deleteProd = document.getElementById("del");
 
 const allList = document.getElementById("allList");
 const ed = document.getElementById("ed");
 
 backToHome.addEventListener("click", () => {
-  window.location.href = "../index.html";
+  window.location.href = "../../index.html";
 });
 
 // admin.addEventListener("click", () => {
@@ -23,16 +24,19 @@ function getLSList() {
 }
 
 function addToTheList(name, info, price) {
-  let prod = {
-    name: name,
-    info: info,
-    price: price,
-  };
-  let products = getLSList();
-  products.push(prod);
-  localStorage.setItem("list", JSON.stringify(products));
+  if (name && info && price) {
+    let prod = {
+      name: name,
+      info: info,
+      price: price,
+    };
+    let products = getLSList();
+    products.push(prod);
+    localStorage.setItem("list", JSON.stringify(products));
+  } else {
+    alert("you have to enter new product");
+  }
 }
-
 addNewProd.addEventListener("click", () => {
   addToTheList(prodName.value, prodInfo.value, prodPrice.value);
   prodName.value = "";
@@ -64,4 +68,17 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     .join("");
   allList.innerHTML = display;
+});
+
+function delProd(el) {
+  let products = getLSList();
+  let filtered = products.filter(item, item != item.id);
+  console.log(filtered);
+}
+
+deleteProd.addEventListener("click", (el) => {
+  let element = el.target.value;
+  let id = element.getAtribute("data-id");
+  delProd(id);
+  console.log(elemtn);
 });

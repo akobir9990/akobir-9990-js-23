@@ -9,8 +9,18 @@ goBackHome.addEventListener("click", () => {
 
 enter.addEventListener("click", () => {
   if (usr.value === "akobir" && paswd.value === "9992") {
-    window.location.href = "../admin.html";
+    window.location.href = "../admin/admin.html";
   } else {
-    alert("mashennik ekansizku ");
+    alert(`
+    User: akobir;   Password:9992; terib koring qanii
+    `);
+    usr.value = "";
+    paswd.value = "";
   }
 });
+
+function delProd(el) {
+  let products = getLSList();
+  let filtered = products.filter(item, item != item.id);
+  console.log(filtered);
+}
